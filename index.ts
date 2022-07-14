@@ -7,5 +7,5 @@ server.get('/', (request: Request, response: Response) =>{
 })
 
 server.listen(5000, () =>{
-    console.log('Servidor on na porte 5000')
+    console.log('Servidor on na porte 5000 http//localhost:5000/')
 })
