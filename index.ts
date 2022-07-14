@@ -1,4 +1,7 @@
-function soma(numero :  number) {
-    return numero + 1
-}
-console.log(soma('torre'));
+import express from 'express';
+
+const server = express();
+
+server.listen(5000, () =>{
+    console.log('Servidor on na porte 5000')
+})
