@@ -8,7 +8,7 @@ const createUseController = new CreateUseController();
 router.get('/', (request: Request, response: Response) =>{
     return response.json({mensagem: 'Bem vindo a nossa API'})
  })
- router.get('/usuarios', createUseController.handle)
+ router.post('/usuarios', createUseController.handle)
  
 
  export{router}
