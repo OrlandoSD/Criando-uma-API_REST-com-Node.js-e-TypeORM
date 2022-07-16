@@ -1,13 +1,31 @@
+import { getRepository } from 'typeorm';
+import { Usuario } from '../entities/Usuarios';
 interface IUsuario{
+    id: string,
     nome: string,
-    email: string
+    email?: string
 }
 
 class CreateUserService {
-    execute({nome, email}:IUsuario){
-        const data = []//'postgres://yboaiota:Mj8-K-cSrv5sRS5C3UAHEk3ykc8CzRs6@motty.db.elephantsql.com/yboaiota'];
+    async execute( {id, nome, email}:IUsuario){
+        const Usuario = await getRepository(Usuario)
+            .createQueryBuilder()
+            .insert()
+            .into(Usuario)
+            .values([
+                {
+                    id:id
+                    nome:nome
+                    email:email
 
-        data.push({nome, email});
+                }
+
+            ]) 
+            .execute();
+        
+        console.log(usuario.identifiers[0])
+
+        return Usuario.identifiers[0]
 
         return;
 

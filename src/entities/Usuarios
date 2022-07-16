@@ -1,0 +1,15 @@
+import { Entity, Column, PrimaryColmn } from 'typeorm';
+
+@Entity('Usuarios')
+class Usuario{
+    @PrimaryColmn()
+    id: string;
+
+    @Column()
+    nome: string
+
+    @Column()
+    email:string
+}
+
+export{ Usuario }
