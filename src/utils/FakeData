@@ -1,0 +1,34 @@
+import { CreateUserService } from '../services/CreateUserService';
+import { v4 as uuid } from 'uuid';
+
+class FakeData{
+    createUserService = new this.CreateUserService();
+
+    async execute(){
+        await this.createUserService.execute({
+            id: uuid(),
+            nome: 'Algum usuario',
+            email: 'algumusuario@dio.com.br',
+    })
+
+    await this.createUserService.execute({
+
+        id: uuid(),
+        nome: 'Outro usuario',
+        email: '',
+    })
+
+}
+
+async createUser(){
+    const user = await this.createUserService.execute({
+        id: uuid(),
+        nome: 'Algum usuario',
+        email: 'algumusuario@dio.com.br'
+    })
+
+    return user
+    }
+}
+
+export { FakeData }
