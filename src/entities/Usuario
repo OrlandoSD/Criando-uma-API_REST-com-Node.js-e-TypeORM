@@ -1,8 +1,8 @@
-import { Entity, Column, PrimaryColmn } from 'typeorm';
+import { Entity, Column, PrimaryColumn } from 'typeorm';
 
-@Entity('Usuarios')
+@Entity('usuarios')
 class Usuario{
-    @PrimaryColmn()
+    @PrimaryColumn()
     id: string;
 
     @Column()

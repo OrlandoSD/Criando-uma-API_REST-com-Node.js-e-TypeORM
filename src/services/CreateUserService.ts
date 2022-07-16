@@ -1,5 +1,5 @@
 import { getRepository } from 'typeorm';
-import { Usuario } from '../entities/Usuarios';
+import { Usuario } from '../entities/Usuario';
 interface IUsuario{
     id: string,
     nome: string,

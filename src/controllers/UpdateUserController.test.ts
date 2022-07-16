@@ -1,4 +1,4 @@
-import { createConnection } from '../database';
+import  createConnection  from '../database';
 import { getConnection } from 'typeorm';
 import { Request } from 'express';
 import { makeMockResponse } from '../utils/mocks/mockResposne';
@@ -23,8 +23,15 @@ describe('UpdateUserController', () => {
         const request ={ 
             body: {
                 id: mockUser.id,
+                nome: 'Outro nome',
+                email: 'email@email.com.br'
 
             }
-        }
+        } as Request
+
+        const response = makeMockResponse()
+        await updateUserController.handle(rquest, response)
+
+        expect(response.state.status).toBe(204)
     })
 })

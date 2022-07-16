@@ -1,4 +1,4 @@
-import { createConnection }  from "../database";
+import  createConnection   from "../database";
 import { getConnection } from 'typerom';
 import { makeMockResponse } from "../utils/mocks/mockResposne";
 import { makeMockRequest } from "../utils/mocks/mockRequest";
@@ -8,7 +8,7 @@ import { DeleteUserController } from './DeleteUserController';
 describe('DeleteUserController', () => {
     beforeAll(async () => {
         const connection = await createConnection()
-        connection.runMigration()
+        connection.runMigrations()
     })
 
     afterAll(async() =>{

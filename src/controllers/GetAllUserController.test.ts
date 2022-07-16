@@ -1,4 +1,4 @@
-import { createConnection } from '../database';
+import createConnection  from '../database';
 import { getConnection } from 'typeorm';
 import { makeMockRequest } from '../utils/mocks/mockRequest';
 import { makeMockResponse } from '../utils/mocks/mockResposne';
@@ -8,7 +8,7 @@ import { FakeData } from '../utils/FakeData';
 describe('GetAllUserController', () => {
     beforeAll(async() =>{
         const connection =await createConnection()
-        connection.runMigration()
+        connection.runMigrations()
     })
 
     afterAll(async() =>{
