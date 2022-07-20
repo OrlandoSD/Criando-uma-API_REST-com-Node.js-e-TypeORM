@@ -1,7 +1,7 @@
 import { getConnection } from 'typeorm';
-import { createConnection } from '../database';
+import  createConnection    from "../database";
 import { v4 as uuid } from 'uuid';
-import { CreateUserService, CreateUserService } from './CreateUserService';
+import { CreateUserService } from './CreateUserService';
 
 describe('CreateUserService', () => {
     beforeAll(async() => {
@@ -15,7 +15,7 @@ describe('CreateUserService', () => {
         await connection.close();
     })
 
-    it('Deve retornar o id do usuário criado', async()=>{
+    it('Deve retornar o id do usuário criado', async() => {
         const createUserService = new CreateUserService();
 
         const result = await createUserService.execute({

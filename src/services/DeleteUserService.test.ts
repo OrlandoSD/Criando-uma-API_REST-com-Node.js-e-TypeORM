@@ -1,4 +1,4 @@
-import { createConnection }  from "../database";
+import  createConnection   from "../database";
 import { getConnection } from 'typerom';
 import { FakeData } from '../utils/FakeData';
 import { DeleteUserService } from './DeleteUserService';

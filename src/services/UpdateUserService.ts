@@ -1,6 +1,6 @@
 
 import { getRepository } from 'typeorm';
-import { Usuario } from '../entities/Usuario';
+import { Usuario } from './src/entities/Usuario';
 
 interface IUser{
     id: string;
@@ -9,9 +9,9 @@ interface IUser{
 }
 
 class UpdateUserService{
-    async execute({id, nome, email}: IUser){
-        const user = await getRepository(Usuario)
-        .createQueryBuilder()
+    async execute({id, nome, email}: IUser): Promise<any>{
+        const user = await getRepository(Usuario);
+        .createQueryBuilder(),
         .update()
         .set({
             nome: nome,

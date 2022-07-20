@@ -6,10 +6,10 @@ class Usuario{
     id: string;
 
     @Column()
-    nome: string
+    nome: string;
 
     @Column()
-    email:string
+    email:string;
 }
 
 export{ Usuario }
